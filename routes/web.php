@@ -11,7 +11,7 @@ $router->get('/list', function () {
                 'id' => 1,
                 'path' => '/content/1',
                 'link' => 'https://google.de',
-                'image' => 'test.jpg',
+                'image' => 'images/test01.jpg',
                 'source' => 'list-detail-example',
             ]
         ],
@@ -25,7 +25,7 @@ $router->get('/detail', function () {
                 'id' => 1,
                 'path' => '/content/1',
                 'link' => 'https://google.de',
-                'image' => 'test.jpg',
+                'image' => 'images/test01.jpg',
                 'source' => 'list-detail-example',
             ]
         ],
