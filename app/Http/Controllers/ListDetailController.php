@@ -25,19 +25,19 @@ class ListDetailController extends Controller
         ]);
     }
 
-    public function detail(Faker $faker)
+    public function detail(Faker $faker, $id)
     {
         return response()->json([
-            'data' => $this->getListContent(1),
+            'data' => $this->getListContent(1, $id),
         ]);
     }
 
-    private function getListContent($count = 10): array
+    private function getListContent($count = 10, $fixedId = null): array
     {
         $arrContent = [];
 
         for ($i = 0; $i < $count; $i++) {
-            $id = $this->faker->randomDigitNotNull;
+            $id = $fixedId ?? $this->faker->randomDigitNotNull;
 
             $arrContent[] = [
                 'id' => $id,

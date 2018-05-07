@@ -6,4 +6,4 @@ $router->get('/', function () use ($router) {
 
 $router->get('/list', 'ListDetailController@list');
 
-$router->get('/detail', 'ListDetailController@detail');
+$router->get('/detail/{id}', 'ListDetailController@detail');
