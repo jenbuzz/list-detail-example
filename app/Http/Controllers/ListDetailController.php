@@ -2,45 +2,58 @@
 
 namespace App\Http\Controllers;
 
+use Faker\Factory as Faker;
+
 class ListDetailController extends Controller
 {
-    public function list()
+    private $faker;
+
+    private $images = [
+        'images/test01.jpg',
+        'images/test02.jpg',
+    ];
+
+    public function __construct()
+    {
+        $this->faker = Faker::create();
+    }
+
+    public function list(Faker $faker)
     {
         return response()->json([
-            'data' => [
-                [
-                    'id' => 1,
-                    'path' => '/content/1',
-                    'link' => 'https://google.de',
-                    'image' => 'images/test01.jpg',
-                    'source' => 'list-detail-example',
-                    'description' => '01. Lorem ipsum bla bla bla',
-                ],
-                [
-                    'id' => 2,
-                    'path' => '/content/2',
-                    'link' => 'https://google.de',
-                    'image' => 'images/test02.jpg',
-                    'source' => 'list-detail-example',
-                    'description' => '02- Lorem ipsum bla bla bla',
-                ]
-            ],
+            'data' => $this->getListContent(),
         ]);
     }
 
-    public function detail()
+    public function detail(Faker $faker)
     {
         return response()->json([
-            'data' => [
-                [
-                    'id' => 1,
-                    'path' => '/content/1',
-                    'link' => 'https://google.de',
-                    'image' => 'images/test01.jpg',
-                    'source' => 'list-detail-example',
-                    'description' => 'Lorem ipsum lorem ipsum lorem ipsum',
-                ]
-            ],
+            'data' => $this->getListContent(1),
         ]);
+    }
+
+    private function getListContent($count = 10): array
+    {
+        $arrContent = [];
+
+        for ($i = 0; $i < $count; $i++) {
+            $id = $this->faker->randomDigitNotNull;
+
+            $arrContent[] = [
+                'id' => $id,
+                'path' => '/detail/' . $id,
+                'link' => $this->faker->url,
+                'image' => $this->getImage(),
+                'source' => $this->faker->domainName,
+                'description' => $this->faker->text(),
+            ];
+        }
+
+        return $arrContent;
+    }
+
+    private function getImage(): string
+    {
+        return $this->images[array_rand($this->images)];
     }
 }
