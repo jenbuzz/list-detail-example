@@ -32,7 +32,7 @@ class ListDetailController extends Controller
         ]);
     }
 
-    private function getListContent($count = 10, $fixedId = null): array
+    private function getListContent(int $count = 10, int $fixedId = null): array
     {
         $arrContent = [];
 
