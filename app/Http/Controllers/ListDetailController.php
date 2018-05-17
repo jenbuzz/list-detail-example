@@ -41,6 +41,7 @@ class ListDetailController extends Controller
 
             $arrContent[] = [
                 'id' => $id,
+                'title' => $this->faker->sentence(),
                 'path' => '/detail/' . $id,
                 'link' => $this->faker->url,
                 'image' => $this->getImage(),
