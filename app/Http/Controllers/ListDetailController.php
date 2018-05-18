@@ -13,6 +13,11 @@ class ListDetailController extends Controller
         'images/test02.jpg',
     ];
 
+    private $icons = [
+        'images/icon01.png',
+        'images/icon02.png',
+    ];
+
     public function __construct()
     {
         $this->faker = Faker::create();
@@ -21,18 +26,18 @@ class ListDetailController extends Controller
     public function list(Faker $faker)
     {
         return response()->json([
-            'data' => $this->getListContent(),
+            'data' => $this->getContent(),
         ]);
     }
 
     public function detail(Faker $faker, $id)
     {
         return response()->json([
-            'data' => $this->getListContent(1, $id),
+            'data' => $this->getContent(1, $id),
         ]);
     }
 
-    private function getListContent(int $count = 10, int $fixedId = null): array
+    private function getContent(int $count = 10, int $fixedId = null): array
     {
         $arrContent = [];
 
@@ -47,6 +52,7 @@ class ListDetailController extends Controller
                 'image' => $this->getImage(),
                 'source' => $this->faker->domainName,
                 'description' => $this->faker->text(),
+                'icons' => $this->getIcons(),
             ];
         }
 
@@ -56,5 +62,13 @@ class ListDetailController extends Controller
     private function getImage(): string
     {
         return $this->images[array_rand($this->images)];
+    }
+
+    private function getIcons(): array
+    {
+        return [
+            $this->icons[array_rand($this->icons)],
+            $this->icons[array_rand($this->icons)]
+        ];
     }
 }
