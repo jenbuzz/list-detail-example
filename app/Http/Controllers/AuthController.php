@@ -21,7 +21,7 @@ class AuthController extends Controller
     protected function jwt(User $user)
     {
         $payload = [
-            'iss' => "lumen-jwt",
+            'iss' => 'lumen-jwt',
             'sub' => $user->id,
             'iat' => time(),
             'exp' => time() + 60*60,
@@ -33,8 +33,8 @@ class AuthController extends Controller
     public function authenticate(User $user)
     {
         $this->validate($this->request, [
-            'email'     => 'required|email',
-            'password'  => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
 
         $user = User::where('email', $this->request->input('email'))->first();
@@ -51,7 +51,7 @@ class AuthController extends Controller
         }
 
         return response()->json([
-            'error' => 'Email or password is not valid'
+            'error' => 'Email or password is not valid',
         ], 400);
     }
 }
