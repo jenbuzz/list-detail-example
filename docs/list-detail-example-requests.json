@@ -1,0 +1,99 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-05-26T11:29:19.686Z",
+	"__export_source": "insomnia.desktop.app:v5.16.6",
+	"resources": [
+		{
+			"_id": "wrk_f70f3c2d7d5d473e9e13398397265f3b",
+			"created": 1527333928142,
+			"description": "",
+			"modified": 1527333928142,
+			"name": "list-detail-example",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_978096d492eb43dfacb6e0a754696055",
+			"color": null,
+			"created": 1527333928157,
+			"data": {},
+			"isPrivate": false,
+			"modified": 1527333928157,
+			"name": "New Environment",
+			"parentId": "wrk_f70f3c2d7d5d473e9e13398397265f3b",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_1038aa24cedf49a5ae01400b1f6b85b5",
+			"cookies": [],
+			"created": 1527333928160,
+			"modified": 1527333928160,
+			"name": "Default Jar",
+			"parentId": "wrk_f70f3c2d7d5d473e9e13398397265f3b",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "req_604229899fd9425f805090687dc4e3df",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"email\": \"test@test.com\",\n\t\"password\": \"123456\"\n}"
+			},
+			"created": 1527333963149,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_25889459fa7942eda589cb63f5ec37d8",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1527333963149,
+			"method": "POST",
+			"modified": 1527334029594,
+			"name": "list-detail-example - Auth Login",
+			"parameters": [],
+			"parentId": "wrk_f70f3c2d7d5d473e9e13398397265f3b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://192.168.56.101/auth/login",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c0e4b1c1a88c42fda7c8f3aa2bd65335",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjksImlhdCI6MTUyNzMzMzk4MiwiZXhwIjoxNTI3MzM3NTgyfQ.ghJc8RDnVlGXT96KsMJh6sfS1sT6tJDvFnuJMjr396M\"\n}"
+			},
+			"created": 1527334048298,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_bffa0d921cb3462fbb9a564f9c0d6d18",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1527333963099,
+			"method": "GET",
+			"modified": 1527334066986,
+			"name": "list-detail-example - Get Users",
+			"parameters": [],
+			"parentId": "wrk_f70f3c2d7d5d473e9e13398397265f3b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://192.168.56.101/users",
+			"_type": "request"
+		}
+	]
+}
