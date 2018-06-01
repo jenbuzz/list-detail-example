@@ -18,6 +18,13 @@ class ListDetailController extends Controller
         'images/icon02.png',
     ];
 
+    private $linkIcons = [
+        'amazon',
+        'android',
+        'apple',
+        'windows',
+    ];
+
     public function __construct()
     {
         $this->faker = Faker::create();
@@ -44,11 +51,29 @@ class ListDetailController extends Controller
         for ($i = 0; $i < $count; $i++) {
             $id = $fixedId ?? $this->faker->randomDigitNotNull;
 
+            $linkIcon = '';
+            if ($i % 2 || $count === 1) {
+                $link = [
+                    [
+                        'uri' => $this->faker->url,
+                        'icon' => $this->getLinkIcon(),
+                    ],
+                    [
+                        'uri' => $this->faker->url,
+                        'icon' => $this->getLinkIcon(),
+                    ],
+                ];
+            } else {
+                $link = $this->faker->url;
+                $linkIcon = $this->getLinkIcon();
+            }
+
             $arrContent[] = [
                 'id' => $id,
                 'title' => $this->faker->sentence(),
                 'path' => '/detail/' . $id,
-                'link' => $this->faker->url,
+                'link' => $link,
+                'linkIcon' => $linkIcon,
                 'image' => $this->getImage(),
                 'source' => $this->faker->domainName,
                 'description' => $this->faker->text(),
@@ -70,5 +95,10 @@ class ListDetailController extends Controller
             $this->icons[array_rand($this->icons)],
             $this->icons[array_rand($this->icons)]
         ];
+    }
+
+    private function getLinkIcon(): string
+    {
+        return $this->linkIcons[array_rand($this->linkIcons)];
     }
 }
