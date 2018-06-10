@@ -44,6 +44,16 @@ class ListDetailController extends Controller
         ]);
     }
 
+    public function listAuth(Faker $faker)
+    {
+        return $this->list($faker);
+    }
+
+    public function detailAuth(Faker $faker, $id)
+    {
+        return $this->detail($faker, $id);
+    }
+
     private function getContent(int $count = 10, int $fixedId = null): array
     {
         $arrContent = [];

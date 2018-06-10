@@ -10,6 +10,10 @@ $router->group(['middleware' => 'jwt.auth'], function () use ($router) {
     $router->get('users', function () {
         return response()->json(\App\User::all());
     });
+
+    $router->get('auth/list', 'ListDetailController@listAuth');
+
+    $router->get('auth/detail/{id}', 'ListDetailController@detailAuth');
 });
 
 $router->get('list', 'ListDetailController@list');
