@@ -88,6 +88,7 @@ class ListDetailController extends Controller
                 'source' => $this->faker->domainName,
                 'description' => $this->faker->text(),
                 'icons' => $this->getIcons(),
+                'labels' => $this->getLabels(),
             ];
         }
 
@@ -110,5 +111,12 @@ class ListDetailController extends Controller
     private function getLinkIcon(): string
     {
         return $this->linkIcons[array_rand($this->linkIcons)];
+    }
+
+    private function getLabels(): array
+    {
+        return [
+            $this->faker->randomFloat(2, 5, 200),
+        ];
     }
 }
