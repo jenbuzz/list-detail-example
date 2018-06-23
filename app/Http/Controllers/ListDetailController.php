@@ -44,6 +44,13 @@ class ListDetailController extends Controller
         ]);
     }
 
+    public function detailAutoId(Faker $faker)
+    {
+        return response()->json([
+            'data' => $this->getContent(1, rand(1, 5)),
+        ]);
+    }
+
     public function listAuth(Faker $faker)
     {
         return $this->list($faker);

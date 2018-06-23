@@ -19,3 +19,5 @@ $router->group(['middleware' => 'jwt.auth'], function () use ($router) {
 $router->get('list', 'ListDetailController@list');
 
 $router->get('detail/{id}', 'ListDetailController@detail');
+
+$router->get('detail', 'ListDetailController@detailAutoId');
