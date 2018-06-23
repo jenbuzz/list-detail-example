@@ -18,4 +18,39 @@ class ListDetailTest extends TestCase
 
         $this->assertEquals(200, $response->status());
     }
+
+    public function testDetailAutoId()
+    {
+        $response = $this->call('GET', '/detail');
+
+        $this->assertEquals(200, $response->status());
+    }
+
+    public function testAuthLogin()
+    {
+        $response = $this->call('POST', '/auth/login');
+
+        $this->assertEquals(422, $response->status());
+    }
+
+    public function testAuthUsers()
+    {
+        $response = $this->call('POST', '/users');
+
+        $this->assertEquals(405, $response->status());
+    }
+
+    public function testAuthList()
+    {
+        $response = $this->call('POST', '/auth/list');
+
+        $this->assertEquals(405, $response->status());
+    }
+
+    public function testAuthDetail()
+    {
+        $response = $this->call('POST', '/auth/detail/1');
+
+        $this->assertEquals(405, $response->status());
+    }
 }
