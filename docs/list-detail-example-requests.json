@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2018-05-26T11:29:19.686Z",
+	"__export_date": "2018-07-01T17:00:41.685Z",
 	"__export_source": "insomnia.desktop.app:v5.16.6",
 	"resources": [
 		{
@@ -93,6 +93,161 @@
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
 			"url": "http://192.168.56.101/users",
+			"_type": "request"
+		},
+		{
+			"_id": "req_88243bf574e7460a9d89174a273ddb9a",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjksImlhdCI6MTUyODYwNjA3MywiZXhwIjoxNTI4NjA5NjczfQ.wJjPDYhg5jXv7dXW9jq30aHBxklSm-jQ82f1g8fKW8U\"\n}"
+			},
+			"created": 1528606070374,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_bffa0d921cb3462fbb9a564f9c0d6d18",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1527333553529,
+			"method": "GET",
+			"modified": 1528606120238,
+			"name": "list-detail-example - List (Auth)",
+			"parameters": [],
+			"parentId": "wrk_f70f3c2d7d5d473e9e13398397265f3b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://192.168.56.101/auth/list",
+			"_type": "request"
+		},
+		{
+			"_id": "req_ebcd65c4967341a48a2a3cd87c472953",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjksImlhdCI6MTUyODYwNjA3MywiZXhwIjoxNTI4NjA5NjczfQ.wJjPDYhg5jXv7dXW9jq30aHBxklSm-jQ82f1g8fKW8U\"\n}"
+			},
+			"created": 1528606126645,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_bffa0d921cb3462fbb9a564f9c0d6d18",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1527333348744,
+			"method": "GET",
+			"modified": 1528606151897,
+			"name": "list-detail-example - Detail (Auth)",
+			"parameters": [],
+			"parentId": "wrk_f70f3c2d7d5d473e9e13398397265f3b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://192.168.56.101/auth/detail/1",
+			"_type": "request"
+		},
+		{
+			"_id": "req_2f3355e6b2e14b7cb520e63cfb74f51b",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1530464287086,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_bffa0d921cb3462fbb9a564f9c0d6d18",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1527333246351.5,
+			"method": "GET",
+			"modified": 1530464320574,
+			"name": "list-detail-example - List",
+			"parameters": [],
+			"parentId": "wrk_f70f3c2d7d5d473e9e13398397265f3b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://192.168.56.101/list",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f5a33f09424641fbaaea08c8194a1564",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1530464330580,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_bffa0d921cb3462fbb9a564f9c0d6d18",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1527333195155.25,
+			"method": "GET",
+			"modified": 1530464350039,
+			"name": "list-detail-example - Detail Id",
+			"parameters": [],
+			"parentId": "wrk_f70f3c2d7d5d473e9e13398397265f3b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://192.168.56.101/detail/1",
+			"_type": "request"
+		},
+		{
+			"_id": "req_aac7d57ef9d34e12bdb0c485da4427f0",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1530464356174,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_bffa0d921cb3462fbb9a564f9c0d6d18",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1527333169557.125,
+			"method": "GET",
+			"modified": 1530464365483,
+			"name": "list-detail-example - Detail",
+			"parameters": [],
+			"parentId": "wrk_f70f3c2d7d5d473e9e13398397265f3b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://192.168.56.101/detail",
 			"_type": "request"
 		}
 	]
