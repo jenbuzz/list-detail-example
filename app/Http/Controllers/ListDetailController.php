@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Faker\Factory as Faker;
 
 class ListDetailController extends Controller
@@ -30,10 +31,12 @@ class ListDetailController extends Controller
         $this->faker = Faker::create();
     }
 
-    public function list(Faker $faker)
+    public function list(Request $request, Faker $faker)
     {
+        $filter = $request->input('filter', null);
+
         return response()->json([
-            'data' => $this->getContent(),
+            'data' => $this->getContent(10, null, $filter),
         ]);
     }
 
@@ -61,7 +64,7 @@ class ListDetailController extends Controller
         return $this->detail($faker, $id);
     }
 
-    private function getContent(int $count = 10, int $fixedId = null): array
+    private function getContent(int $count = 10, int $fixedId = null, string $filter = null): array
     {
         $arrContent = [];
 
@@ -87,7 +90,7 @@ class ListDetailController extends Controller
 
             $arrContent[] = [
                 'id' => $id,
-                'title' => $this->faker->sentence(),
+                'title' => ($filter ? ucfirst($filter) . ' ' : '') . $this->faker->sentence(),
                 'path' => '/detail/' . $id,
                 'link' => $link,
                 'linkIcon' => $linkIcon,
