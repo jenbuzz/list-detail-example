@@ -33,24 +33,22 @@ class ListDetailController extends Controller
 
     public function list(Request $request, Faker $faker)
     {
-        $filter = $request->input('filter', null);
-
         return response()->json([
-            'data' => $this->getContent(10, null, $filter, $request),
+            'data' => $this->getContent(10, null, $request),
         ]);
     }
 
     public function detail(Request $request, Faker $faker, $id)
     {
         return response()->json([
-            'data' => $this->getContent(1, $id, null, $request),
+            'data' => $this->getContent(1, $id, $request),
         ]);
     }
 
     public function detailAutoId(Request $request, Faker $faker)
     {
         return response()->json([
-            'data' => $this->getContent(1, rand(1, 5), null, $request),
+            'data' => $this->getContent(1, rand(1, 5), $request),
         ]);
     }
 
@@ -64,8 +62,9 @@ class ListDetailController extends Controller
         return $this->detail($faker, $id);
     }
 
-    private function getContent(int $count = 10, int $fixedId = null, string $filter = null, Request $request): array
+    private function getContent(int $count = 10, int $fixedId = null, Request $request): array
     {
+        $filter = $request->input('filter', null);
         $htmlImage = $request->input('htmlImage', null);
 
         $arrContent = [];
