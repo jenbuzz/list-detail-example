@@ -36,21 +36,21 @@ class ListDetailController extends Controller
         $filter = $request->input('filter', null);
 
         return response()->json([
-            'data' => $this->getContent(10, null, $filter),
+            'data' => $this->getContent(10, null, $filter, $request),
         ]);
     }
 
-    public function detail(Faker $faker, $id)
+    public function detail(Request $request, Faker $faker, $id)
     {
         return response()->json([
-            'data' => $this->getContent(1, $id),
+            'data' => $this->getContent(1, $id, null, $request),
         ]);
     }
 
-    public function detailAutoId(Faker $faker)
+    public function detailAutoId(Request $request, Faker $faker)
     {
         return response()->json([
-            'data' => $this->getContent(1, rand(1, 5)),
+            'data' => $this->getContent(1, rand(1, 5), null, $request),
         ]);
     }
 
@@ -64,8 +64,10 @@ class ListDetailController extends Controller
         return $this->detail($faker, $id);
     }
 
-    private function getContent(int $count = 10, int $fixedId = null, string $filter = null): array
+    private function getContent(int $count = 10, int $fixedId = null, string $filter = null, Request $request): array
     {
+        $htmlImage = $request->input('htmlImage', null);
+
         $arrContent = [];
 
         for ($i = 0; $i < $count; $i++) {
@@ -88,13 +90,18 @@ class ListDetailController extends Controller
                 $linkIcon = $this->getLinkIcon();
             }
 
+            $image = $this->getImage();
+            if ($htmlImage) {
+                $image = '<a href="#"><img src="'.$request->root().'/' . $image . '"></a>';
+            }
+
             $arrContent[] = [
                 'id' => $id,
                 'title' => ($filter ? ucfirst($filter) . ' ' : '') . $this->faker->sentence(),
                 'path' => '/detail/' . $id,
                 'link' => $link,
                 'linkIcon' => $linkIcon,
-                'image' => $this->getImage(),
+                'image' => $image,
                 'source' => $this->faker->domainName,
                 'description' => $this->faker->text(),
                 'icons' => $this->getIcons(),
