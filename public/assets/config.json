@@ -1,0 +1,125 @@
+{
+    "metaTags": {
+        "disableMetaTags": false,
+        "url": "https://localhost/",
+        "title": "list-detail-app Example",
+        "titleSuffix": "",
+        "image": ""
+    },
+    "api": {
+        "authToken": {
+            "enableAuthentication": true,
+            "path": "auth/login",
+            "credentials": {
+                "email": "test@test.com",
+                "password": "123456"
+            }
+        },
+        "list": {
+            "path": "list",
+            "parameters": [
+                "htmlImage=1"
+            ],
+            "searchFieldName": "search",
+            "filterFieldName": "filter",
+            "paginationOffsetName": "offset",
+            "paginationLimitName": "limit"
+        },
+        "detail": {
+            "path": "detail",
+            "parameters": [
+                "htmlImage=1"
+            ],
+            "idParameter": "id",
+            "idPath": false
+        },
+        "dataPath": [
+            "data"
+        ],
+        "image": {
+            "path": [],
+            "idPath": [],
+            "urlPath": []
+        }
+    },
+    "elementFieldMapping": {
+        "id": [
+            "id"
+        ],
+        "title": [
+            "title"
+        ],
+        "description": [
+            "description"
+        ],
+        "internal_link": [
+            "path"
+        ],
+        "external_link": [
+            "link"
+        ],
+        "external_link_icon": [
+            "icon"
+        ],
+        "image": [
+            "image"
+        ],
+        "source": [
+            "source"
+        ],
+        "icons": [
+            "icons"
+        ],
+        "labels": [
+            "labels"
+        ]
+    },
+    "filters": {
+        "mainFilter": ["android", "windows"]
+    },
+    "styling": {
+        "themeMainColor": "#222222"
+    },
+    "settings": {
+        "showSourceTextOnBtn": true,
+        "showSquareImage": false,
+        "useHtmlImage": true
+    },
+    "translation": {
+        "fallbackLanguage": "en",
+        "useLocalStorage": false,
+        "useHtmlLang": false,
+        "translations": {
+            "en": {
+                "title": "list-detail-app Example",
+                "search": "search for something here...",
+                "goback": "Go back",
+                "readmore": "Read more at",
+                "externallink": "(link)",
+                "source": "Source: ",
+                "error": "Sorry, something went wrong...",
+                "notfound": "Error 404",
+                "notfoundtext": "Sorry, this page does not exist!",
+                "emptyresult": "Sorry, nothing here...",
+                "prevpage": "Previous Page",
+                "nextpage": "Next Page",
+                "filter": "Filter"
+            },
+            "de": {
+                "title": "list-detail-app Example auf Deutsch",
+                "search": "Suchbegriff eingeben...",
+                "goback": "Zurück",
+                "readmore": "Mehr auf ",
+                "externallink": "(Link)",
+                "source": "Quelle: ",
+                "error": "Tut uns leid, da ist etwas schiefgelaufen...",
+                "notfound": "Fehler 404",
+                "notfoundtext": "Tut uns leid, diese Seite gibt es nicht!",
+                "emptyresult": "Tut uns leid, nichts gefunden...",
+                "prevpage": "Vorherige Seite",
+                "nextpage": "Nächste Seite",
+                "filter": "Filter"
+            }
+        }
+    }
+}
