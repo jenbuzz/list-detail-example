@@ -9,7 +9,11 @@
             <link rel="stylesheet" href="styles.css">
         </head>
         <body style="width: 90%; margin: 0 auto;">
-            <list-detail-app></list-detail-app>
+            <list-detail-app>
+                <div class="loader-container" style="margin-top: 182px;">
+                    <div class="loader"></div>
+                </div>
+            </list-detail-app>
             <script src="/js/bundle.js"></script>
         </body>
  </html>
